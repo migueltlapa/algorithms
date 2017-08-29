@@ -28,9 +28,11 @@ void shufflecard(int *arr, int n)
 int main(int argc, char *argv[])
 {
 clock_t t;
+clock_t ts;
+clock_t tp;
 
 
-int x; /*Choose Option*/
+int x; /*Print Values*/
 int n; /*Size of Array */
 int i=0; /*Iterations */
 int index=2;
@@ -86,6 +88,19 @@ while(index<argc)
 	
 	if(strcmp(argv[index],"bs")==0 && (argv[1][0]=='a' ))
 	{
+		
+			
+		printf("BubleSortRight:\n");
+		printf("Reverse Array:");
+/* 		printArray(reverse_array, n); */
+		printf("\n");
+		ts=clock();
+		bubbleSortRight(reverse_array,n);
+		ts=clock()-ts;
+		printf("Time %f seconds to execute \n",((double)ts)/CLOCKS_PER_SEC);
+		printf(" \n");
+		
+			
 		printf("BubleSortRight:\n");
 		printf("Sort Array:   ");
 /* 		printArray(sort_array, n); */
@@ -94,25 +109,20 @@ while(index<argc)
 		bubbleSortRight(sort_array,n);
 		t=clock()-t;
 		printf("Time %f seconds to execute \n",((double)t)/CLOCKS_PER_SEC);
-				
-		printf("BubleSortRight:\n");
-		printf("Reverse Array:");
-/* 		printArray(reverse_array, n); */
-		printf("\n");
-		t=clock()-t;
-		bubbleSortRight(reverse_array,n);
-		t=clock()-t;
-		printf("Time %f seconds to execute \n",((double)t)/CLOCKS_PER_SEC);
-		
+	
 		printf("BubleSortRight:\n");
 		printf("Shuffle Array:");
 /* 		printArray(shuffle_array, n); */
 		printf("\n");
-		t=clock()-t;
+		tp=clock();
 		bubbleSortRight(shuffle_array,n);	
-		t=clock()-t;
-		printf("Time %f seconds to execute \n",((double)t)/CLOCKS_PER_SEC);
+		tp=clock()-tp;
+		printf("Time %f seconds to execute \n",((double)tp)/CLOCKS_PER_SEC);
+		printf(" \n");
 		
+	
+		
+
 	}
 
 	else if(strcmp(argv[index],"is")==0)
@@ -123,6 +133,9 @@ while(index<argc)
 	index++;
 	
 }
+
+ 
+		
 
 memset(reverse_array,'A',n);
 memset(shuffle_array,'A',n);

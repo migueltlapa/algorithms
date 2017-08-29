@@ -12,43 +12,32 @@ void printArray(int arr[], int size)
 {
 int i;
 for (i=0; i < size; i++)
-printf("%d ", arr[i]);
-
-}
-
-/* Function to sort the array begins to the left */
-void bubbleSortLeft(int arr[], int n){
-int i, j;
-for (i = 0; i < n-1; i++) {
- 
-for (j = 0; j < n-i-1; j++) {
-	if (arr[j] > arr[j+1])
 	{
-	swap(&arr[j], &arr[j+1]);
+	printf("%d ", arr[i]);
 	}
-  	printf("Iteration :%d: ",i);
-  	printArray(arr,n);
-  	printf("\n");
-    }
-}
 }
 
 /* Function to sort the array begins to the right */
 void bubbleSortRight(int arr[], int n){
-int i, j;
+int i, j,instructions=1;
 for (i = 0; i < n-1; i++) {
-
+	instructions++;
 for(j=n-1; j>i; j--) {
+	
 	if (arr[j-1] > arr[j])
 	{
+	instructions++;
 	swap(&arr[j-1], &arr[j]);
 	
 	}
-	/* printf("Iteration :%d: ",i);
-	printArray(arr,n);
-	printf("\n"); */
+	instructions++;
     }
+	/*//printf("Iteration :%d: ",i);
+	printArray(arr,n);
+	printf("\n");  */
 }
+
+printf("Instructions:%d\n",instructions);
 }
 
  
