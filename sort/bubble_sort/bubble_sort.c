@@ -44,9 +44,9 @@ for(j=n-1; j>i; j--) {
 	swap(&arr[j-1], &arr[j]);
 	
 	}
-	printf("Iteration :%d: ",i);
+	/* printf("Iteration :%d: ",i);
 	printArray(arr,n);
-	printf("\n");
+	printf("\n"); */
     }
 }
 }

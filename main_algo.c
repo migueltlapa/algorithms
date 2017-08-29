@@ -1,17 +1,14 @@
 /*Author:Miguel Tlapa Juarez 
   Date:August 28 2017 
-  Version 1.0 */
-#include <bubble_sort.h>
+  Version 1.1.3 */
+/*My libraries */
+  
+  #include <bubble_sort.h>
+/********************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-
-int cmpfunc (const void * a, const void * b)
-{
-   return ( *(int*)a - *(int*)b );
-}
-
 
 void shufflecard(int *arr, int n)
 {
@@ -27,8 +24,12 @@ void shufflecard(int *arr, int n)
 	
 }
 
+
 int main(int argc, char *argv[])
 {
+clock_t t;
+
+
 int x; /*Choose Option*/
 int n; /*Size of Array */
 int i=0; /*Iterations */
@@ -76,7 +77,10 @@ while(index<argc)
 		printf("Define Array:");
 		printArray(define_array, n);
 		printf("\n");
+		t=clock();
 		bubbleSortRight(define_array,n);
+		t=clock()-t;
+		printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
 
 	}
 	
@@ -84,22 +88,30 @@ while(index<argc)
 	{
 		printf("BubleSortRight:\n");
 		printf("Sort Array:   ");
-		printArray(sort_array, n);
+/* 		printArray(sort_array, n); */
 		printf("\n");	
+		t=clock();
 		bubbleSortRight(sort_array,n);
+		t=clock()-t;
+		printf("Time %f seconds to execute \n",((double)t)/CLOCKS_PER_SEC);
 				
 		printf("BubleSortRight:\n");
 		printf("Reverse Array:");
-		printArray(reverse_array, n);
+/* 		printArray(reverse_array, n); */
 		printf("\n");
+		t=clock()-t;
 		bubbleSortRight(reverse_array,n);
+		t=clock()-t;
+		printf("Time %f seconds to execute \n",((double)t)/CLOCKS_PER_SEC);
 		
 		printf("BubleSortRight:\n");
 		printf("Shuffle Array:");
-		printArray(shuffle_array, n);
+/* 		printArray(shuffle_array, n); */
 		printf("\n");
+		t=clock()-t;
 		bubbleSortRight(shuffle_array,n);	
-		
+		t=clock()-t;
+		printf("Time %f seconds to execute \n",((double)t)/CLOCKS_PER_SEC);
 		
 	}
 
