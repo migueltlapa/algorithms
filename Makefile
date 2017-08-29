@@ -21,6 +21,10 @@ gdb:
 	@echo 'GDB MODE'
 	gdb ./main_algo
 
+run:
+	@echo 'RUN MODE'
+	./main_algo
+
 clean:
 	@echo 'CLEAN MODE'
 	-rm -f main_algo
