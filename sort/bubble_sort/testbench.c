@@ -24,57 +24,30 @@ int i=0; /*Iterations */
 printf("Give the size of the array:");
 scanf("%d",&n);
 
-int *shuffle_array 	=malloc(n*sizeof(int));
 int *reverse_array 	=malloc(n*sizeof(int));
+int *sort_array		=malloc(n*sizeof(int));
 
 for(i=0;i<n;i++)
 		{
-		shuffle_array[i]=i;
-		reverse_array[i]=i;
+		sort_array[i]	=i;
+		reverse_array[n-i-1]=i;
 		}
-shufflecard(shuffle_array,n);	
-t=clock();
-bubbleSortRight(shuffle_array, n);	
-printf("Shuffle Array\n");
-t=clock()-t;
-printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
-
-
-t=clock();
-bubbleSortRight(reverse_array, n);	
-printf("Shuffle Reverse:\n");
-t=clock()-t;
-printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
-
-t=clock();
-bubbleSortRight(shuffle_array, n);	
-printf("Shuffle Array\n");
-t=clock()-t;
-printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
-
-
-t=clock();
-bubbleSortRight(reverse_array, n);	
-printf("Shuffle Reverse:\n");
-t=clock()-t;
-printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
-
-t=clock();
-bubbleSortRight(shuffle_array, n);	
-printf("Shuffle Array\n");
-t=clock()-t;
-printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
-
-
-t=clock();
-bubbleSortRight(reverse_array, n);	
-printf("Shuffle Reverse:\n");
-t=clock()-t;
-printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
-
-
 
 	
+// shufflecard(shuffle_array,n);	
+t=clock();
+
+printf("Sort Array\n");
+t=clock();
+bubbleSortRight(sort_array, n);	
+t=clock()-t;
+printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
+
+printf("Reverse Array:\n");
+bubbleSortRight(reverse_array, n);	
+t=clock()-t;
+printf("Time %f seconds to execute \n", ((double)t)/CLOCKS_PER_SEC);
+
 return 0;
 	
 }
