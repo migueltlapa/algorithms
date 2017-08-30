@@ -1,0 +1,22 @@
+%Graphs Functions
+
+N=[0:8];
+C=1;
+K=5;
+n_k=K.*N;
+nC2=N.*N;
+nFact=C.*factorial(N);
+nComb_full=C.*N.^N;
+nlineal=C.*N;
+Log_n=C.*log(N);
+
+
+n_log=(C.*x.*log(x)).*(C.*x.*log(x));
+plot(N,n_k,'r-o');
+hold on
+plot(N,nC2,'g-o');
+hold on;
+n_log=(C.*N.*log(N)).*(C.*N.*log(N));
+hold on;
+plot(N,n_log,'b-o')
+hold on;
